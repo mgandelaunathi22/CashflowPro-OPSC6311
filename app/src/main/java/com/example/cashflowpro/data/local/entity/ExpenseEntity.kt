@@ -20,5 +20,13 @@ import java.util.Date
 
 )
 data class ExpenseEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long=0,
+    val amount: Double,
+    val date: Date, //or Long timestamp
+    val description: String?,
+    val categoryId: Long,
+    val receiptPath: String? = null, //full file path saved receipt image (NOT the image bytes!)  IMPORTANT: store as path only
+    val createdArt: Date = Date()
+
 
 )
